@@ -5,18 +5,45 @@
 
         <!-- Compiled and minified JavaScript -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+            $.getJSON("retros.json", function(json) {
+                var html_to_append = '';
+                $.each(json, function(i, item) {
+                    html_to_append += 
+                    '<div class="z-depth-3 grey lighten-3">' +
+                    '<h4>' + item.date + '</h4>' +
+                    '<div class="divider"></div>' +
+                    '<div class="row"><p>Members:</p>';
+                    $.each(item.members, function(i, member) {
+                        console.log(member)
+                        html_to_append +=
+                        '<div class="col s3"><a>' + member + '</a></div>';
+                    })
+                    html_to_append +=
+                    '</div><div class="divider">' +
+                    '</div>';
+                })
+                $("#retro-container").html(html_to_append);
+            });
+        </script>
     </head>
 
     <body>
-        <nav>
+        <nav class="blue darken-4">
             <div class="nav-wrapper">
                 <a href="#" class="brand-logo">Logo</a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li><a href="sass.html">Sass</a></li>
-                    <li><a href="badges.html">Components</a></li>
-                    <li><a href="collapsible.html">JavaScript</a></li>
+                    <li><a href="html/create.html">Nowhere</a></li>
                 </ul>
             </div>
         </nav>
+        
+        <div class="container">
+            <div id="retro-container">
+        
+            </div>
+        </div>
     </body>
 </html>

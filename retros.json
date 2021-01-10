@@ -1,0 +1,18 @@
+[
+    {
+        "date": "04/01/2021",
+        "members": ["Ben Diliberto", "Stephen Clibbery", "Mario Grebelski"],
+        "areas": [
+            {
+                "name": "Ease of Release",
+                "state": 2,
+                "trend": 2
+            },
+            {
+                "name": "Suitable Process",
+                "state": 2,
+                "trend": 2
+            }
+        ]
+    }
+]
